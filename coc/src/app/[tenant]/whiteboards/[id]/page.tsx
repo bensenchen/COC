@@ -135,11 +135,14 @@ export default function WhiteboardPage({ params }: WhiteboardPageProps) {
 
       <div className="flex-1 bg-gray-50 relative">
         <Whiteboard 
+          roomId={id}
           initialContent={initialContent} 
           onEditorMount={(editor) => {
             editorRef.current = editor;
           }}
           className="h-full border-none rounded-none"
+          userId={`user-${Math.random().toString(36).substr(2, 9)}`}
+          userName={`User ${Math.floor(Math.random() * 1000)}`}
         />
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
-import { Home, Settings, Users, FileText } from 'lucide-react';
+import { Home, Settings, Users, FileText, PenTool } from 'lucide-react';
 
 interface TenantLayoutProps {
   children: ReactNode;
@@ -31,6 +31,13 @@ export default async function TenantLayout({ children, params }: TenantLayoutPro
           >
             <FileText className="w-5 h-5 mr-3" />
             Documents
+          </Link>
+          <Link
+            href={`/${tenant}/whiteboards`}
+            className="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-100"
+          >
+            <PenTool className="w-5 h-5 mr-3" />
+            Whiteboards
           </Link>
           <Link
             href={`/${tenant}/users`}
